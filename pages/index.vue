@@ -28,7 +28,14 @@
 </template>
 
 <script>
-export default {}
+export default {
+  async fetch() {
+      const data = await this.$axios.get(
+        '/posts'
+      );
+      console.log(data);
+  },
+}
 </script>
 
 <style>
