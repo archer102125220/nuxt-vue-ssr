@@ -1,6 +1,8 @@
 
-import clientEnv from './config/client';
+// import { serverConfig, clientEnv } from './config/client';
+import client from './config/client';
 // import mode from './models';
+const { server, clientEnv } = client;
 
 export default {
   /*
@@ -62,6 +64,7 @@ export default {
   */
   build: {
   },
+  server,
   env: clientEnv,
   dir: {
     // assets: 'custom-assets',

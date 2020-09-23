@@ -1,7 +1,7 @@
 const clientConfig = {
-    APP_PROTOCOL:process.env.APP_PROTOCOL || 'http',
-    APP_HOST: process.env.APP_HOST || 'localhost',
-    APP_PORT: process.env.APP_PORT || 3000,
+    protocol:process.env.APP_PROTOCOL || 'http',
+    host: process.env.APP_HOST || 'localhost',
+    port: process.env.APP_PORT || 3000,
 };
 const apiConfig = {
     SERVER_PREFIX: process.env.SERVER_PREFIX,
@@ -12,7 +12,10 @@ const apiConfig = {
 
 
 export default {
-    client: clientConfig.APP_PROTOCOL + '://' + clientConfig.APP_HOST + ':' + clientConfig.APP_PORT ,
-    api: apiConfig.SERVER_PROTOCOL + '://' + apiConfig.SERVER_HOST + ':' + apiConfig.SERVER_PORT + '/' + apiConfig.SERVER_PREFIX,
-    socket: apiConfig.SERVER_PROTOCOL + '://' + apiConfig.SERVER_HOST + ':' + apiConfig.SERVER_PORT
+    server: clientConfig,
+    clientEnv: {
+        api: apiConfig.SERVER_PROTOCOL + '://' + apiConfig.SERVER_HOST + ':' + apiConfig.SERVER_PORT + '/' + apiConfig.SERVER_PREFIX,
+        socket: apiConfig.SERVER_PROTOCOL + '://' + apiConfig.SERVER_HOST + ':' + apiConfig.SERVER_PORT,
+        ...apiConfig
+    }
 };
