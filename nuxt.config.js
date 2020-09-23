@@ -70,6 +70,6 @@ export default {
     // middleware: 'custom-middleware',
     // pages: 'custom-pages',
     // static: 'custom-static',
-    store: 'mode'
+    store: 'models'
   }
 }
