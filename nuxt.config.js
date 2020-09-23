@@ -1,4 +1,7 @@
 
+import clientEnv from './config/client';
+// import mode from './models';
+
 export default {
   /*
   ** Nuxt rendering mode
@@ -58,5 +61,15 @@ export default {
   ** See https://nuxtjs.org/api/configuration-build/
   */
   build: {
+  },
+  env: clientEnv,
+  dir: {
+    // assets: 'custom-assets',
+    // app: 'custom-app',
+    // layouts: 'custom-layouts',
+    // middleware: 'custom-middleware',
+    // pages: 'custom-pages',
+    // static: 'custom-static',
+    store: 'mode'
   }
 }
